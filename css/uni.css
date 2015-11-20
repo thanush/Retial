@@ -1,8 +1,24 @@
-@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic,500,500italic,700,700italic);
-body{
-	font-family: 'Ubuntu', sans-serif;
+/*@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic,500,500italic,700,700italic);*/
+@font-face {
+	font-family: Ubuntu-R; /* Regular 400 */
+	src: url(../fonts/Ubuntu-R.ttf);
 }
-a{
+@font-face {
+	font-family: Ubuntu-B; /* Bold 600 */
+	src: url(../fonts/Ubuntu-B.ttf);
+}
+@font-face {
+	font-family: Ubuntu-M; /* Medium 500*/
+	src: url(../fonts/Ubuntu-M.ttf);
+}
+@font-face {
+	font-family: Ubuntu-L; /* Light 300 */
+	src: url(../fonts/Ubuntu-L.ttf);
+}
+body{
+	font-family:Ubuntu-R;
+}
+a, a:focus{
 	text-decoration: none;
 }
 a:hover{
@@ -28,15 +44,15 @@ a:hover{
 .top-header ul li{ 
 	display: inline-table;
 	border-left: 1px rgba(255,255,255,0.1) solid;
-	padding-left: 5px;
-    padding-right: 5px
 }
-.top-header ul li a{
-	color: #ACB1B7;
-	padding: 6px 16px;
+.top-header ul li a {
+    color: #ACB1B7;
+    padding: 6px 16px;
     font-size: 13px;
     display: block;
     text-decoration: none;
+    text-transform: capitalize;
+    font-family: Ubuntu-B;
 }
 .main-header{
 	background-color: #2C3E51;
@@ -44,7 +60,7 @@ a:hover{
 .main-header [class*="col-"]{
 	padding: 32px 12px 22px;
 }
-.page-search .input-group span{
+.page-search .input-group i{
 	position: absolute;
 }
 .page-search .form-control, .page-search .btn {
@@ -87,7 +103,7 @@ a:hover{
 }
 .coupon-box .coupon-type {
     font-size: 20px;
-    font-weight: 600;
+    font-family: Ubuntu-B;
     margin: 16px 0;
     line-height: 1;
 }
@@ -164,7 +180,7 @@ a:hover{
 }
 .pop-cats ul li.heading{
 	font-size: 20px;
-    font-weight: 700;
+    font-family: Ubuntu-M;
 }
 .pop-cats ul li a{
 	font-size: 14px;
@@ -175,8 +191,12 @@ a:hover{
     padding: 48px 0;
     overflow: hidden;
 }
-.deals-row{
-	background-color: #E9E7E8;
+.deals-row {
+    background-color: #E9E7E8;
+    padding: 33px 0px;
+}
+.deals-row h2{
+    margin-top: 0px;
 }
 .social-btns ul{
 	padding: 0px;
@@ -219,6 +239,12 @@ a:hover{
 	padding: 34px 0;
 	border-bottom: 1px #d5d5d5 solid;
 	border-top: 1px #d5d5d5 solid;
+    margin-bottom: 30px;
+}
+.footer-plugins-title{
+    margin:15px 0px;
+    color: #99B2D8;
+    letter-spacing: 8px;
 }
 .exts ul li a{
 	    display: block;`
@@ -229,6 +255,22 @@ a:hover{
     overflow: hidden;
     text-align: left;
     color: #fff;
+    padding-right: 12px;
+}
+.slogan {
+    margin: 10px 2px 48px 4px;
+}
+.slogan h2 {
+    color: #8db654;
+    font-family: Ubuntu-B;
+    font-size: 63px;
+    display: inline-block;
+}
+.slogan a{
+    display: inline-block;
+}
+.slogan h4{
+    font-size: 25px;
 }
 .exts ul > li > a > i {
     font-size: 28px;
@@ -254,7 +296,7 @@ a:hover{
 }
 .main-header .btn {
     text-transform: uppercase;
-    font-weight: 600;
+    font-family: Ubuntu-B;
 }
 .dropdown > a:hover{
 	color: #fff;
@@ -305,6 +347,12 @@ a:hover{
     height: 78px;
     line-height: 68px;
 }
+.store-big img {
+    width: 100%;
+}
+.page-suggest [class*="col-"] img{
+    width: 100%;
+}
 .store > a > span {
     position: absolute;
     width: 100%;
@@ -339,7 +387,6 @@ a:hover{
     border-radius: 0px !important;
 }
 .wrap-show-coupon .nav-tabs > li > a{
-	    margin-top: -12px;
     padding: 12px 20px;
     font-weight: 400;
     color: #393939;
@@ -362,10 +409,51 @@ a:hover{
 .coupon-box .coupon-all a:focus {
     color: #333;
 }
-.social-btns ul > li > a.social-facebook:hover:before, 
-.social-btns ul > li > a.social-facebook:focus:before {
+.social-btns ul > li > a.social-facebook:hover, 
+.social-btns ul > li > a.social-facebook:focus {
     height: 100%;
     background-color: #3a5897;
+    color: #fff !important;
+}
+.social-btns ul > li > a.social-facebook:hover .fa-facebook-official, 
+.social-btns ul > li > a.social-facebook:focus .fa-facebook-official{
+	color: #fff !important;
+}
+.social-btns ul > li > a.social-pinterest:hover, 
+.social-btns ul > li > a.social-pinterest:focus{
+    height: 100%;
+    background-color: #bd081c;
+    color: #fff !important;
+}.
+.social-btns ul > li > a.social-pinterest:hover .social-pinterest i, 
+.social-btns ul > li > a.social-pinterest:focus .social-pinterest i{
+	color: #fff !important;
+}
+.social-btns ul > li > a.social-twitter:hover, 
+.social-btns ul > li > a.social-twitter:focus{
+     height: 100%;
+    background-color: #2AA9DF;
+    color: #fff;   
+}
+.social-btns ul > li > a.social-twitter:hover, 
+.social-btns ul > li > a.social-twitter:focus{
+  height: 100%;
+    background-color: #55acee;
+    color: #fff;   
+}
+.social-btns ul > li > a.social-twitter:hover .fa-twitter-square, 
+.social-btns ul > li > a.social-twitter:focus .fa-twitter-square{
+	color: #fff; 
+}
+.social-btns ul > li > a.social-google:hover, 
+.social-btns ul > li > a.social-google:focus{
+  height: 100%;
+    background-color: #dc4e41;
+    color: #fff;   
+}
+.social-btns ul > li > a.social-google:hover .fa-google-plus-square, 
+.social-btns ul > li > a.social-google:focus .fa-google-plus-square{
+	color:#fff;
 }
 .social-btns ul > li > a:before {
     content: '';
@@ -383,4 +471,23 @@ a:hover{
 .social-btns ul > li > a > span {
     position: relative;
     z-index: 1;
+}
+.social-facebook i{
+    color: #3A5897;
+}
+.social-pinterest i{
+    color: #C91F27;
+}
+.social-twitter i{
+    color: #2AA9DF;
+}
+.social-google i{
+    color: #C53012;
+}
+.log-btn{
+    background-color: #3570A4;
+    color: #fff !important;
+}
+.nav-stacked > li.active{
+    border-left:2px solid #8db654!important;
 }
